@@ -1,4 +1,4 @@
 JAVA_ARGS="-Doracle.net.tns_admin=/opt/oracle/instantclient_12_1/network/admin -Djava.security.krb5.conf=/etc/krb5.conf -Doracle.net.kerberos5_cc_name=/etc/krb5cc -Dsun.security.krb5.debug=true -Doracle.net.kerberos5_mutual_authentication=true -Doracle.net.authentication_services=KERBEROS5"
 LB_ARGS="--changeLogFile=samplechangelog.sql --url=jdbc:oracle:thin:@RDS"
 echo "JAVA_OPTS="$JAVA_ARGS" liquibase $LB_ARGS update"
-JAVA_OPTS="$JAVA_ARGS" liquibase $LB_ARGS rollbackCount 4
+JAVA_OPTS="$JAVA_ARGS" liquibase $LB_ARGS history
