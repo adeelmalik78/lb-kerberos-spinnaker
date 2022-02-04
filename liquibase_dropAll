@@ -1,0 +1,6 @@
+JAVA_ARGS="-Doracle.net.tns_admin=/opt/oracle/instantclient_12_1/network/admin -Djava.security.krb5.conf=/etc/krb5.conf -Doracle.net.kerberos5_cc_name=/etc/krb5cc -Dsun.security.krb5.debug=true -Doracle.net.kerberos5_mutual_authentication=true -Doracle.net.authentication_services=KERBEROS5"
+LB_ARGS="--logLevel=FINE --liquibaseProLicenseKey=ABwwGgQUjxKd8KQ1fa7HHI4P0Qsq3L22wOICAgQAjkB2jF6k42cSkAOMPPHgsp+e269W6eQeasbDCM6ks26gap8UcqOJnnGmC1REO0wyJmeH6kEg9RXXdsOLpwP0ieB0m+L0qX5V312gnWEs2srdn4y2MQa00f7rkvlIGFIITA5PytTg8VOaelFuwgOG3hl9qxIG3FPFLcvWd6LZvqt4+tSil8FJ6a8kfWPyrxG73ELEtWgGuIlH7+u9DKyMMWCGELuM3+YcHNDgfac3lri30+Dz0qB2xjm5VG5ikiiG/Hikvcbm4k/mJZEDimSRR7uMjLs/MFkcRqCCmhLUareSb2TWsfrOXaZbZ/1vNjbC5Mw3P6i4jxzzSDbVUMtQ8bZiPJsmF9QzOc180sytVZI1HkBTPUVx2GVmzCHYevTY7WSenIvzHGwv6KBspZL8ZHxRSU+2foW3y1aYmEDxRaxqUKplhidWE69InLidVKVbDN2XHpSsNZVOICoY5ggBN6HL6AazokZZr/ut35oVqvwBocsbVFDmh7l4OxlUHnQjxunywLL8leZztcOA9ZDVEGWzK+0KIUmMNYc3WRJYutMFgU10oGXpNA4PWjhlzNUzbOt2roNejsmqpY5n9S9aYQ0xzsevYnvx05tYF4E/blOhE41YWfEQKZnqXRj0MDVO7p1r+SCfCL/OvejvvcuHidU4zP0DwiY3gFZHTnNAjXk= --changeLogFile=changelog_master.xml --url=jdbc:oracle:thin:app_schema/@oracle-kerberos.cz1j1vh9uvuo.us-east-1.rds.amazonaws.com:1521/ORCL"
+echo "JAVA_OPTS="$JAVA_ARGS" liquibase $LB_ARGS dropAll"
+echo $TNS_ADMIN
+echo $RDS
+JAVA_OPTS="$JAVA_ARGS" liquibase $LB_ARGS dropAll
